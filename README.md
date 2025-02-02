@@ -1,4 +1,4 @@
-# Activitai
+# ActivitAI Chrome Extension (and test server)
 
 A browser extension and server for tracking and analyzing user activity.
 
