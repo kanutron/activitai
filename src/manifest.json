@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "ActivitAI",
+  "version": "1.0.0",
+  "description": "Reports browsing activity to a local or remote server for an AI agent to process.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["default_content.js"]
+    },
+    {
+      "matches": ["https://app.todoist.com/*"],
+      "js": ["scripts/todoist.com/content.js"]
+    },
+    {
+      "matches": ["https://app.slack.com/client/*"],
+      "js": ["scripts/slack.com/content.js"]
+    }
+  ]
+}
